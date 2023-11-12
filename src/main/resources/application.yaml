@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    
+spring:
+  application:
+    name: gateway-service
+    
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: http://movie-service-server:9011
+          predicates:
+            - Path=/users,/users/{userId},/register,/login,/validateToken
+            
+        - id: movie-service
+          uri: http://movie-service-server:9012
+          predicates:
+            - Path=/movies,/movies/{movieId}
+            
+        - id: event-service
+          uri: http://event-service-server:9013
+          predicates:
+            - Path=/events,/events/{eventId}
+
+        - id: review-service
+          uri: http://review-service-server:9014
+          predicates:
+            - Path=/movies/{movieId}/reviews,/movies/{movieId}/reviews/{reviewId},/events/{eventId}/reviews,/events/{eventId}/reviews/{reviewId}
+    

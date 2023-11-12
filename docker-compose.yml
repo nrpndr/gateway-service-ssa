@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  gateway-service-server:
+    container_name: gateway-service-server
+    image: gateway-service:1.0
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - cineevent-net
+        
+networks:
+  cineevent-net:
+    external: true
+    name: user-service_cineevent-net
