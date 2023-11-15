@@ -5713,7 +5713,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:52026"
+			"value": "http://localhost:8080"
 		}
 	]
 }
