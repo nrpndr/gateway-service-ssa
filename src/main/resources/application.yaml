@@ -16,12 +16,12 @@ spring:
             - Path=/users,/users/{userId},/register,/login,/validateToken
             
         - id: movie-service
-          uri: http://movie-service-server:9012
+          uri: http://movie-service-server:80
           predicates:
-            - Path=/movies,/movies/{movieId}
+            - Path=/fetch-all-movies,/fetch-movie-by-id/{id}
             
         - id: event-service
-          uri: http://event-service-server:9013
+          uri: http://event-service-server:8095
           predicates:
             - Path=/events,/events/{eventId}
 
