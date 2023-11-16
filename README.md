@@ -55,8 +55,8 @@ This project contains also the [Postman export file](https://github.com/nrpndr/g
     ```
 - Prerequisite to the above is that you have to have the following service running if you want to play around with the APIs. The service will come up event without these backend service without being up, just that the APIs will not function.
 - [userservice](https://github.com/nrpndr/user-service)
-- [movieservice](https://github.com/nrpndr/movie-service)
-- [eventservice](https://github.com/nrpndr/event-service)
+- [movieservice](https://github.com/Dharrani-K/2022mt93105-Scalable-Service-Assignment)
+- [eventservice](https://github.com/shubham-shar/Event-Service)
 - [reviewservice](https://github.com/nrpndr/review-service)
 
 - If you want to avoid all that hassle, simply do the following(You need to have docker desktop installed for this). Even 
