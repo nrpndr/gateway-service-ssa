@@ -65,11 +65,51 @@ This project contains also the [Postman export file](https://github.com/nrpndr/g
     mvn clean install
     docker compose up
     ```
+    
+### Running the project on minikube
+**NOTE** - Kindly install the below software before moving ahead
+- minikube
+- kubectl
+- docker
+Once you have installed above software, run below commands to get this application deployed
+- Build the code
+- `mvn clean install`
+- Build the docker image
+- `docker build -t <github-user-id>/gateway-service:<tag> .`
+- Push the image to docker hub. 
+- `docker push <github-user-id>/gateway-service:<tag>`
+- Start minikube
+- `minikube start`
+- Set docker as default context
+- `docker context use default`
+- Create deployment for gateway service
+- `kubectl apply -f ./gateway-service-server-deployment.yaml`
+- Check the deployments
+- `kubectl get deployments -o wide`
+- Check the pod logs
+- `kubectl logs -f <pod-name>`
+- Create service for gateway service
+- `kubectl apply -f ./gateway-service-server-service.yaml`
+- Check the service
+- `kubectl get services`
+- Check details of the service
+- `kubectl describe service gateway-service-server`
+- Interact with the service via HTTP endpoint
+- `minikube serivce gateway-service-server`
+- Scale deployment to 2
+- `kubectl scale deployment gateway-service-server --replicas=2`
+- Stop service
+- `kubectl delete service gateway-service-server`
+- Stop deployment
+- `kubectl delete deployment gateway-service-server`
+- Stop minikube
+- `minikube stop`
+
 
 ## Acknowledgments
 - [Baeldung](https://www.baeldung.com)
 - [StackoverFlow](https://stackoverflow.com/)
 - [Mkyong](https://mkyong.com/)
 - [spring.io](https://spring.io/)
-* [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway)
+- [Spring Cloud Gateway](https://spring.io/projects/spring-cloud-gateway)
 - [Docker](https://docs.docker.com/)
