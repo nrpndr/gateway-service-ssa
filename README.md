@@ -71,7 +71,7 @@ This project contains also the [Postman export file](https://github.com/nrpndr/g
 - minikube
 - kubectl
 - docker
-Once you have installed above software, run below commands to get this application deployed
+- Once you have installed above software, run below commands to get this application deployed
 - Build the code
 - `mvn clean install`
 - Build the docker image
